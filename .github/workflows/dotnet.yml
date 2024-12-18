@@ -18,16 +18,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0' # Adjust based on your project's .NET version
+        dotnet-version: '9.0.101' # Adjust based on your project's .NET version
 
     # Step 3: Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet dotnet restore HelloWorldApp/HelloWorldApp.csproj
 
     # Step 4: Build the application
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build HelloWorldApp/HelloWorldApp.csproj --no-restore --configuration Release
 
     # Step 5: Run the application
     - name: Run Application
-      run: dotnet run
+      run: dotnet run --project HelloWorldApp/HelloWorldApp.csproj
