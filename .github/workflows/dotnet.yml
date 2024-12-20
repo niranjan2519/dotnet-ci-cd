@@ -22,12 +22,8 @@ jobs:
 
     # Step 3: Restore dependencies
     - name: Restore dependencies
-      run: dotnet dotnet restore HelloWorldApp/HelloWorldApp.csproj
+      run: dotnet restore
 
     # Step 4: Build the application
     - name: Build
-      run: dotnet build HelloWorldApp/HelloWorldApp.csproj --no-restore --configuration Release
-
-    # Step 5: Run the application
-    - name: Run Application
-      run: dotnet run --project HelloWorldApp/HelloWorldApp.csproj
+      run: dotnet build
