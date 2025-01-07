@@ -1,9 +1,14 @@
 name: .NET CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      build_type:
+        required: true
+        type: string
+    secrets:
+      github_token:
+        required: true
 
 jobs:
   build:
